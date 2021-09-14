@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+}
+.App {
+  position: relative;
+}
+
+.loading-spinner {
+  position: absolute;
+  right: 30px;
+  top: 60px;
+}
+.movie-card-wrapper {
+  height: 400px;
+}
+.person-card-wrapper {
+  height: 380px;
+}
+.movie-card,
+.person-card {
+  height: 100%;
+}
+
+.image {
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .movie-card-wrapper {
+    height: 420px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .movie-card-wrapper {
+    height: 450px;
+  }
+}
