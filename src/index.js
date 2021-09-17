@@ -12,7 +12,7 @@ const queryClient = new QueryClient({
   defaultOptions:{
     queries:{
       refetchOnWindowFocus:false, // Do not refetch when you go to another page 
-      staleTime: 1000 * 60 * 5 ,//5 mins //Global stateTime
+      staleTime: 1000 * 60 * 10 ,//10 mins 
       casheTime: 1000 * 60* 30, //30 min
     }
   }
@@ -20,14 +20,16 @@ const queryClient = new QueryClient({
 
 ReactDOM.render(
   <React.StrictMode>
+
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-      <GenresContextProvider>
-        <App />
-        <ReactQueryDevtools  initialIsOpen={false}/>
-        </GenresContextProvider>
+          <GenresContextProvider>
+            <App />
+            <ReactQueryDevtools  initialIsOpen={false}/>
+          </GenresContextProvider>
       </BrowserRouter>
     </QueryClientProvider>
+    
   </React.StrictMode>,
   document.getElementById('root')
 );

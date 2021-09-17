@@ -26,12 +26,33 @@ export const getMovieDetails = async (id) => {
   return get(`/movie/${id}?api_key=${API_KEY}&append_to_response=credits`)
 }
 
+export const getMovie = async (id) => {
+  return get(`/movie/${id}?api_key=${API_KEY}`)
+}
+
 export const getPerson = async (person_id) => {
   return get(`/person/${person_id}?api_key=${API_KEY}&language=en-US`)
 }
 
 export const getMoviesByPerson = async (person_id) => {
   return get(`/discover/movie?api_key=${API_KEY}&language=en-US&include_adult=false&with_people=${person_id}`)
+}
+
+export const getRelatedMovies = async (genre, year) => {
+  return get(`/discover/movie?with_genres=${genre}&primary_release_year=${year}&api_key=${API_KEY}&include_adult=false`)
+}
+
+export const getMoviesBySearch = async ({
+  query = null,
+  page = 1
+}) => {
+  return query ?
+    get(`/search/movie?api_key=${API_KEY}&language=en-US&query=${query}&page=${page}&include_adult=false`) :
+    null
+}
+
+export const getTrendingMovies = async (time_window) => {
+  return get(`/trending/movie/${time_window}?api_key=${API_KEY}`)
 }
 
 
@@ -42,5 +63,9 @@ export default {
   getMoviesByGenre,
   getMovieDetails,
   getPerson,
-  getMoviesByPerson
+  getMoviesByPerson,
+  getRelatedMovies,
+  getMoviesBySearch,
+  getTrendingMovies,
+  getMovie
 }

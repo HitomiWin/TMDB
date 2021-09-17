@@ -10,8 +10,9 @@ body {
   right: 30px;
   top: 60px;
 }
+
 .movie-card-wrapper {
-  height: 400px;
+  height: 460px;
 }
 .person-card-wrapper {
   height: 380px;
@@ -22,16 +23,20 @@ body {
 }
 
 .image {
+  height:100%;
   text-align: center;
 }
-
-@media only screen and (min-width: 768px) {
-  .movie-card-wrapper {
-    height: 420px;
-  }
+.search-icon{
+  color:white
 }
-@media only screen and (min-width: 992px) {
-  .movie-card-wrapper {
-    height: 450px;
-  }
+
+ .search-icon :hover{
+  color: gray;
+}
+
+.time-stamp{
+  color:gray
+}
+.card-body{
+  height:100%
 }

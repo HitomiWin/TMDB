@@ -7,8 +7,8 @@ const PersonCardList = ({ cast }) => {
     <Container className="my-5">
       <h1>Cast</h1>
       <Row className="personcard-list  flex-nowrap overflow-scroll">
-        {cast?.map((person) => (
-          <PersonCard person={person} key={person.id} />
+        {cast?.map((person, i) => (
+          <PersonCard person={person} key={i} />
         ))}
       </Row>
     </Container>

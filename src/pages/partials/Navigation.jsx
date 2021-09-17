@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav, Container } from "react-bootstrap";
 import { useGenresContext } from "../../contexts/GenresContext";
 
 const Navigation = () => {
@@ -17,18 +17,23 @@ const Navigation = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Item>
-              <NavLink to="/" className="nav-link">
-                Home
-              </NavLink>
-            </Nav.Item>
-            <NavDropdown title="Movies" id="nav-dropdown">
               <NavLink
-                to={`/movies/genres/${genreId}`}
-                className="dropdown-item"
+                to={`/movies/genres/${genreId}?page=1`}
+                className="nav-link"
               >
                 Genres
               </NavLink>
-            </NavDropdown>
+            </Nav.Item>
+            <Nav.Item>
+              <NavLink to={"/movies/search"} className="nav-link">
+                Search
+              </NavLink>
+            </Nav.Item>
+            <Nav.Item>
+              <NavLink to={"/movies/history"} className="nav-link">
+                History
+              </NavLink>
+            </Nav.Item>
           </Nav>
         </Navbar.Collapse>
       </Container>

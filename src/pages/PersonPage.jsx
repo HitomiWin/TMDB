@@ -19,7 +19,6 @@ const PersonPage = () => {
       <p className="text-center">An error has ocdured: {error.message} </p>
     );
   if (isLoading) return <Spinner animation="border" size="sm" />;
-  console.log(data);
 
   return (
     data && (
@@ -27,7 +26,7 @@ const PersonPage = () => {
         <Card className={"person-page mt-3 border-0"}>
           <Row>
             <Col sm={12} md={6} lg={3}>
-              <Card.Img src={posterUrl} />
+              <Card.Img src={posterUrl} alt="No image" className="image" />
             </Col>
             <Col sm={12} md={6} lg={3}>
               <h1 className={"mt-2"}>{data.name}</h1>
@@ -38,7 +37,7 @@ const PersonPage = () => {
               <h5>Place of birth</h5>
               <p>{data.place_of_birth ?? "-"}</p>
               <h5>Also known as</h5>
-              <p>{data.also_known_as ?? "-"}</p>
+              <p>{data.also_known_as.join(" / ") ?? "-"}</p>
             </Col>
             <Col sm={12} md={12} lg={6}>
               <h5>Biography</h5>
