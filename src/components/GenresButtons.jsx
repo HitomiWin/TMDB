@@ -18,7 +18,7 @@ const GenresButtons = ({ setPage }) => {
   const handleOnClick = (id, name) => {
     setPage(1);
     getGenreName(name);
-    history.replace(`/movies/genres/${id}/page=1`);
+    history.replace(`/movies/genres/${id}`);
   };
 
   return (

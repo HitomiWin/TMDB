@@ -38,8 +38,8 @@ export const getMoviesByPerson = async (person_id) => {
   return get(`/discover/movie?api_key=${API_KEY}&language=en-US&include_adult=false&with_people=${person_id}`)
 }
 
-export const getRelatedMovies = async (genre, year) => {
-  return get(`/discover/movie?with_genres=${genre}&primary_release_year=${year}&api_key=${API_KEY}&include_adult=false`)
+export const getRelatedMovies = async (movie_id) => {
+  return get(`/movie/${movie_id}/similar?api_key=${API_KEY}&language=en-US&page=1`)
 }
 
 export const getMoviesBySearch = async ({

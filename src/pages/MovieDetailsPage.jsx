@@ -18,6 +18,7 @@ const MovieDetailsPage = () => {
     () => getMovieDetails(movie_id),{
         staleTime: 1000 * 60 * 30, // 30 mins // stop to refetch because if fetch new save agein to localstorage
         cacheTime: 1000 * 60 * 60 * 1, // 1 hours // because ganre dosen't need to get often
+
     }
   );
 
@@ -75,10 +76,7 @@ const MovieDetailsPage = () => {
           </Row>
         </Card>
         <PersonCardList cast={data.credits.cast} />
-        <RelatedMovies
-          genre={data.genres[0]?.id}
-          year={data.release_date.slice(0, 4)}
-        />
+        <RelatedMovies />
       </Container>
     )
   );

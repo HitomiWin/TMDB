@@ -20,7 +20,7 @@ const PersonCard = ({ person }) => {
               src={posterUrl}
               height="250"
               alt="No image"
-              className="image"
+              className="text-center"
             />
             <Card.Body className={"d-flex flex-column justify-content-between"}>
               <Card.Title>{person.name}</Card.Title>

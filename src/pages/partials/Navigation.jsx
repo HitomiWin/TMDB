@@ -18,7 +18,7 @@ const Navigation = () => {
           <Nav className="ms-auto">
             <Nav.Item>
               <NavLink
-                to={`/movies/genres/${genreId}?page=1`}
+                to={`/movies/genres/${genreId}`}
                 className="nav-link"
               >
                 Genres
