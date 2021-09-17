@@ -7,9 +7,9 @@ const Home = () => {
   return (
     <Container>
       <TrendingMovies />
-      <CategorizedMovies type={"popular"} title={"Whats Popular"} />
+      <CategorizedMovies type={"popular"} title={"What's Popular"} />
 
-      <CategorizedMovies type={"now_playing"} title={"Plaing Now"} />
+      <CategorizedMovies type={"now_playing"} title={"Playing Now"} />
 
       <CategorizedMovies type={"top_rated"} title={"Top 20"} />
     </Container>
