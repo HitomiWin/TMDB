@@ -26,7 +26,7 @@ const PersonPage = () => {
         <Card className={"person-page mt-3 border-0"}>
           <Row>
             <Col sm={12} md={6} lg={3}>
-              <Card.Img src={posterUrl} alt="No image" className="image" />
+              <Card.Img src={posterUrl} alt="No image" className="text-center" />
             </Col>
             <Col sm={12} md={6} lg={3}>
               <h1 className={"mt-2"}>{data.name}</h1>
