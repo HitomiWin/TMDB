@@ -5,17 +5,11 @@ body {
   position: relative;
 }
 
-.loading-spinner {
-  position: absolute;
-  right: 30px;
-  top: 60px;
-}
-
 .movie-card-wrapper {
   height: 460px;
 }
 .person-card-wrapper {
-  height: 380px;
+  height: 400px;
 }
 .movie-card,
 .person-card {
@@ -23,21 +17,21 @@ body {
 }
 
 .image {
-  height:100%;
+  height: 100%;
   text-align: center;
 }
 
-.search-icon{
-  color:white
+.search-icon {
+  color: white;
 }
 
- .search-icon :hover{
+.search-icon :hover {
   color: gray;
 }
 
-.time-stamp{
-  color:gray
+.time-stamp {
+  color: gray;
 }
-.card-body{
-  height:100%
+.card-body {
+  height: 100%;
 }

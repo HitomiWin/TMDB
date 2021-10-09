@@ -11,7 +11,7 @@ const GenresButtons = ({ setPage }) => {
 
   if (isError)
     return (
-      <p className="text-center">An error has ocdured: {error.message} </p>
+      <p className="text-center">An error has occured: {error.message} </p>
     );
 
   // when user click a button reset paget to 1

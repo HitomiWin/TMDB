@@ -14,7 +14,7 @@ const MoviesByPerson = () => {
 
   if (isError)
     return (
-      <p className="text-center">An error has ocdured: {error.message} </p>
+      <p className="text-center">An error has occured: {error.message} </p>
     );
   if (isLoading) return <Spinner animation="border" size="sm" />;
 

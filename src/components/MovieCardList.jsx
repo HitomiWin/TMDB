@@ -6,7 +6,7 @@ import MovieCard from "./MovieCard";
 const MovieCardList = ({ data }) => {
   return (
     <>
-      <Row className="moviecard-list  flex-nowrap overflow-scroll">
+      <Row className="moviecard-list  flex-nowrap overflow-auto">
         {data?.results?.map((result, i) => (
           <MovieCard movie={result} key={i} />
         ))}

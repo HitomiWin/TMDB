@@ -6,7 +6,7 @@ const PersonCardList = ({ cast }) => {
   return (
     <Container className="my-5">
       <h1>Cast</h1>
-      <Row className="personcard-list  flex-nowrap overflow-scroll">
+      <Row className="personcard-list  flex-nowrap overflow-auto overflow-x-hidden">
         {cast?.map((person, i) => (
           <PersonCard person={person} key={i} />
         ))}

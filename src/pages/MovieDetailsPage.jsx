@@ -15,10 +15,10 @@ const MovieDetailsPage = () => {
   const [savedMovies, setSavedMovies] = useLocalStorage("movies", []); // called from custom hooks. key is movie and default value is empry array
   const { data, isLoading, isError, error } = useQuery(
     ["movie", movie_id],
-    () => getMovieDetails(movie_id),{
-        staleTime: 1000 * 60 * 30, // 30 mins // stop to refetch because if fetch new save agein to localstorage
-        cacheTime: 1000 * 60 * 60 * 1, // 1 hours // because ganre dosen't need to get often
-
+    () => getMovieDetails(movie_id),
+    {
+      staleTime: 1000 * 60 * 30, // 30 mins // stop to refetch because if fetch new save agein to localstorage
+      cacheTime: 1000 * 60 * 60 * 1, // 1 hours // because ganre dosen't need to get often
     }
   );
 
@@ -50,7 +50,7 @@ const MovieDetailsPage = () => {
     return <Spinner className="text-center" animation="border" size="sm" />;
   if (isError)
     return (
-      <p className="text-center">An error has ocdured: {error.message} </p>
+      <p className="text-center">An error has occured: {error.message} </p>
     );
 
   return (

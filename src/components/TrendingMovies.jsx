@@ -1,21 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Spinner, Row, Button, Col } from "react-bootstrap";
 import { useQuery } from "react-query";
 import { getTrendingMovies } from "../services/TMDBApi";
+import { useUrlSearchParams } from "use-url-search-params";
 import MovieCardList from "./MovieCardList";
 
 const TrendingMovies = ({ title }) => {
-  const [timeWindow, setTimeWindow] = useState("day");
+  const [params, setParams] = useUrlSearchParams({ timeWindow: "day" });
+  const [timeWindow, setTimeWindow] = useState(params.timeWindow);
   const { isLoading, isError, error, data } = useQuery(
-    ["trendin-movies", timeWindow],
-    () => getTrendingMovies(timeWindow)
+    ["trendin-movies", params.timeWindow],
+    () => getTrendingMovies(params.timeWindow)
   );
+
+  useEffect(() => {
+    setParams({ ...params, timeWindow });
+    // eslint-disable-next-line
+  }, [timeWindow]);
 
   if (isLoading) return <Spinner animation="border" size="sm" />;
 
   if (isError)
     return (
-      <p className="text-center">An error has ocdured: {error.message} </p>
+      <p className="text-center">An error has occured: {error.message} </p>
     );
 
   return (
@@ -24,7 +31,7 @@ const TrendingMovies = ({ title }) => {
         <Col>
           <h1>
             Trending{" "}
-            {timeWindow === "day" ? <span>Dayly</span> : <span>Weekly</span>}
+            {timeWindow === "day" ? <span>Daily</span> : <span>Weekly</span>}
           </h1>
         </Col>
         <Col className="text-end align-self-center">
@@ -34,7 +41,7 @@ const TrendingMovies = ({ title }) => {
             variant="dark"
             className="mx-1"
           >
-            Dayly
+            Daily
           </Button>
           <Button
             onClick={() => setTimeWindow("week")}

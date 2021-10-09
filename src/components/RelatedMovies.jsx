@@ -16,7 +16,7 @@ const RelatedMovies = () => {
 
   if (isError)
     return (
-      <p className="text-center">An error has ocdured: {error.message} </p>
+      <p className="text-center">An error has occured: {error.message} </p>
     );
 
   return (
